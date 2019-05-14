@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="src/app.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <title>TODOアプリ</title>
+</head>
+<body>
+
+    <main id="main">
+        <div class="add-todo js-add-todo">
+        </div>
+
+        <div class="search">
+            <i class="far fa-search" style="font-family: FontAwesome;"></i>
+            <input type="text" class="form js-search" style="font-family: FontAwesome;" placeholder="ここにキーワードを入力してください">
+        </div>
+
+        <ul class="todo-list js-todo_list"></ul>
+            <script type="text/template" id="template-list-item">
+                <li class="list-item">
+                    <i class="fa <% if(isDone){%> fa-check-square <% }else{%> fa-square-o <% } %> icon-check js-done"></i>
+                    <% if(!editMode){ %>
+                    <span class="list-name js-list-edit"><%= text %></span>
+                    <% }else{ %>
+                    <input type="text" class="textEdit js-get-val js-listEdit-done" value="<%= text %>">
+                    <% } %>
+                    <i class="fa fa-trash icon-trash js-click-trash" aria-hidden="true"></i>
+                </li>
+            </script>
+
+
+            <script type="text/template" id="template-add-item">
+                <input class="add-form js-add-text" type="text" placeholder="ここにTODO内容をかく">
+                <% if(hasError){ %>
+                <span class="errorMsg">入力内容が空です</span>
+                <% } %>
+                <button class="btn js-add-btn">TODOを追加</button>
+            </script>
+    </main>
+    
+
+    <script src="dist/bundle.js">
+    </script>
+</body>
+</html>

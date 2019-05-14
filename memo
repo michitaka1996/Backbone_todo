@@ -1,0 +1,27 @@
+Backbone todoアプリ
+
+
+ //1個1個のタスクをtemplateで表示させる
+
+//タスク完了 taskDone
+isDone  true　　　背景をグレーに 
+        js-doneをクリックしたら、
+
+
+
+//タスク編集開始 startEdit
+editMode  true　　textEditを表示させる  falseの時なら　js-list-editを表示
+          js-list-editをクリックしたら    
+
+
+
+
+//タスク編集完了 closeEdit
+editMode  false   falseに戻すことで textEditの表示をやめる
+          変更した内容を取得してDOMにセット
+          shiftキーとenterキーを押したら、
+
+
+
+//タスク削除
+js-click-trashをクリックしたら、removeさせる
